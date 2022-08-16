@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+body{
+    font-family: 'Secular one', sans-serif;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient( rgba(136, 45, 45, 0.6), rgba(87, 17, 17, 0.3) ), 
+        url(imgs/bg.jpg)center no-repeat;
+    background-size: cover;   
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+.card {
+    width: 360px;
+    height: 560px;
+    background: #eee;
+    position: relative;
+    perspective: 1000px;
+}
+
+.sides{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.left-side{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient( rgba(235, 30, 30, 0.6), rgba(17, 1, 1, 0.3) ), 
+        url(imgs/bg.jpg)center no-repeat;
+    background-position-x: 0;
+    width: 50%;
+    height: 100%;
+    transform: rotateY(0deg);
+    transform-origin: left;
+    transition: transform 1.5s;
+}
+.right-side{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient( rgba(235, 30, 30, 0.6), rgba(17, 1, 1, 0.3) ), 
+        url(imgs/bg.jpg)center no-repeat;
+    background-position-x: -1;
+    width: 50%;
+    height: 100%;
+    transform: rotateY(0deg);
+    transform-origin: right;
+    transition: transform 1.5s;
+    
+}
+.back-side{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-end;
+    background: linear-gradient( rgba(235, 30, 30, 0.6), rgba(17, 1, 1, 0.3) ), 
+        url(imgs/cart.jpg)center no-repeat;
+    background-size: cover;
+    z-index: -1;
+    transform: rotateZ(-300px);
+    box-shadow: 40px 40px 50px rgb(167, 52, 52);
+    transition: z-index 0.4s step-end, transform 1s, box-shadow 1s;
+}
+
+.card:hover .left-side{
+    transform: rotateY(-360deg);
+}
+.card:hover .right-side{
+    transform: rotateY(360deg);
+}
+.card:hover .back-side{
+    transform: rotateZ(0);
+    z-index: 1;
+    box-shadow: 50px 50px 100px #000;
+}
+.name {
+    color: #fff;
+    font-size: 35px;
+    margin: 20px 5px;
+}
+
+.princesa{
+    color: #eee;
+    font-size: 25px;
+    margin: 20px 5px;
+}
+
+.left-side .name 
+.left-side .princesa{
+    text-align: right;
+}
+
+.texto{
+    color: #fff;
+    font-size: 22px;
+    
+    width: 90%;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
